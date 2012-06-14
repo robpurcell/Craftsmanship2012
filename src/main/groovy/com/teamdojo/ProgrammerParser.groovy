@@ -10,7 +10,7 @@ class ProgrammerParser {
 	
 	def createProgrammers(def records) {
 		//records.Programmer[0]
-		def programmer = new Programmer(name: records.Programmer[0].name())
+		def programmer = new Programmer(name: records.Programmer[0].@name.text())
 		return [programmer]
 		
 	}

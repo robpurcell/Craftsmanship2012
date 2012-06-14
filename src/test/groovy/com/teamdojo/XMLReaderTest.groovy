@@ -37,7 +37,8 @@ public class XMLReaderTest {
 		ProgrammerParser parser = new ProgrammerParser()
 		def result = parser.createProgrammers(new XmlSlurper().parseText(XMLReaderTest.PROGRAMMER))
 		assert result.size() == 1
-		//assert result[0].hasProperty(name)
+		assert result[0].hasProperty("name")
+		assert result[0].getName() == 'Rick'
 	}	
 
 }
