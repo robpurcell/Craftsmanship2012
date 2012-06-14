@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/main/groovy"/>
-	<classpathentry kind="src" path="src/test/groovy"/>
-	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
-	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spock"/>
 	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src/main/groovy"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/groovy"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
+	<classpathentry sourcepath="/Users/rob/.gradle/caches/artifacts-13/filestore/org.codehaus.groovy/groovy/1.8.6/source/2ac423ad404db3e3d9053c626d4c15a84cd18b73/groovy-1.8.6-sources.jar" kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/org.codehaus.groovy/groovy/1.8.6/jar/553ca93e0407c94c89b058c482a404427ac7fc72/groovy-1.8.6.jar" exported="true"/>
+	<classpathentry sourcepath="/Users/rob/.gradle/caches/artifacts-13/filestore/junit/junit/4.8.2/source/cccca612a66b8387c399be31d69daf000de2ac9e/junit-4.8.2-sources.jar" kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/junit/junit/4.8.2/jar/c94f54227b08100974c36170dcb53329435fe5ad/junit-4.8.2.jar" exported="true"/>
+	<classpathentry sourcepath="/Users/rob/.gradle/caches/artifacts-13/filestore/org.spockframework/spock-core/0.6-groovy-1.8/source/e86c73c53149bbd8a260f7a486c4d9667be5b9d2/spock-core-0.6-groovy-1.8-sources.jar" kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/org.spockframework/spock-core/0.6-groovy-1.8/jar/5c1bfb5058c3659ddc206052601704ccd30133a5/spock-core-0.6-groovy-1.8.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/antlr/antlr/2.7.7/jar/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/asm/asm/3.2/jar/9bc1511dec6adf302991ced13303e4140fdf9ab7/asm-3.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/asm/asm-tree/3.2/jar/cd792e29c79d170c5d0bdd05adf5807cf6875c90/asm-tree-3.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/asm/asm-commons/3.2/jar/e7a19b8c60589499e35f5d2068d09013030b8891/asm-commons-3.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/asm/asm-util/3.2/jar/37ebfdad34d5f1f45109981465f311bbfbe82dcf/asm-util-3.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/asm/asm-analysis/3.2/jar/c624956db93975b7197699dcd7de6145ca7cf2c8/asm-analysis-3.2.jar" exported="true"/>
+	<classpathentry sourcepath="/Users/rob/.gradle/caches/artifacts-13/filestore/org.hamcrest/hamcrest-core/1.2/source/e9be1c6a53b4d4e7564756e924a9fa8b1661ec6a/hamcrest-core-1.2-sources.jar" kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/org.hamcrest/hamcrest-core/1.2/jar/44d12ff84e43c7d0539131f75c92f2f88dba6549/hamcrest-core-1.2.jar" exported="true"/>
+	<classpathentry sourcepath="/Users/rob/.gradle/caches/artifacts-13/filestore/junit/junit-dep/4.9/source/84b903feddab2bd58f5ab2fc0c5c636df42df74d/junit-dep-4.9-sources.jar" kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/junit/junit-dep/4.9/jar/1013627e3993319870863a020034004717505815/junit-dep-4.9.jar" exported="true"/>
+	<classpathentry sourcepath="/Users/rob/.gradle/caches/artifacts-13/filestore/org.codehaus.groovy/groovy-all/1.8.5/source/1435cc8c90e3a91e5fee7bb53e83aad96e93aeb7/groovy-all-1.8.5-sources.jar" kind="lib" path="/Users/rob/.gradle/caches/artifacts-13/filestore/org.codehaus.groovy/groovy-all/1.8.5/jar/3be3914c49ca7d8e8afb29a7772a74c30a1f1b28/groovy-all-1.8.5.jar" exported="true"/>
 </classpath>

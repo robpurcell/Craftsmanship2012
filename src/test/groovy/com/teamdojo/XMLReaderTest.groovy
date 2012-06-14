@@ -75,5 +75,10 @@ public class XMLReaderTest {
 		File xml = new File("src/main/resources/ProNet.xml")
 		def result = parser.processInput(xml.text)
 		assert result.size() == 10
+		println "Name\tSkills\t\t\tRecommendations"
+		println result
+		
 	}
+	
+	
 }
