@@ -4,6 +4,6 @@ class Programmer {
 	
 	def name
 	def skills = []
-	def recommendation = []
+	def recommendations = []
 
 }

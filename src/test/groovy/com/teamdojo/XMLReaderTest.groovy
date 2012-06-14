@@ -24,7 +24,12 @@ public class XMLReaderTest {
 </Network>
 	'''
 	
-	
+	private static String SKILLS = '''
+<Skills>
+    <Skill>Java</Skill>
+    <Skill>PHP</Skill>
+  </Skills>
+'''
 	
 	@Test
 	public void testSlurpXML() {
@@ -39,6 +44,26 @@ public class XMLReaderTest {
 		assert result.size() == 1
 		assert result[0].hasProperty("name")
 		assert result[0].getName() == 'Rick'
+		assert result[0].getSkills() == ['Java', 'PHP']
+		assert result[0].getRecommendations() == ['Ed']
 	}	
-
+	
+	@Test
+	public void testCreateSkills() {
+		ProgrammerParser parser = new ProgrammerParser()
+		def result = new XmlSlurper().parseText(XMLReaderTest.SKILLS).Skill
+		assert result.size() == 2
+				
+	}
+	
+	@Test
+	public void testCreateSkillsImplementation() {
+		ProgrammerParser parser = new ProgrammerParser()
+		def result = parser.createSkills(new XmlSlurper().parseText(XMLReaderTest.PROGRAMMER).Programmer[0].Skills)
+		assert result.size() == 2
+		assert result[0].text() == 'Java'
+		assert result[1].text() == 'PHP'
+	}
+	
+	
 }
