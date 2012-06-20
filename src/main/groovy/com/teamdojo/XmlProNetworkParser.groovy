@@ -4,33 +4,22 @@ class XmlProNetworkParser {
 
 	def processInput(def xml) {
 		def records = new XmlSlurper().parseText(xml)
-
 		createProgrammers(records).sort{it.name}
 	}
 
 	def createProgrammers(def records) {
-		def programmers = []
-		for (programmer in records.Programmer) {
-			programmers.add(new Programmer(name: programmer.@name.text(),
-					skills: createSkills(programmer.Skills),
-					recommendations: createRecommendations(programmer.Recommendations)))
+		records.Programmer.collect() {
+			new Programmer(name: it.@name.text(),
+					skills: createSkills(it.Skills),
+					recommendations: createRecommendations(it.Recommendations))
 		}
-		return programmers
 	}
 
 	def createSkills(def skills) {
-		def result = []
-		for (def skill in skills.Skill) {
-			result.add(skill)
-		}
-		return result
+		skills.Skill.collect()
 	}
 
 	def createRecommendations(def recommendations) {
-		def result = []
-		for (def recommendation in recommendations.Recommendation) {
-			result.add(recommendation)
-		}
-		return result
+		recommendations.Recommendation.collect()
 	}
 }
