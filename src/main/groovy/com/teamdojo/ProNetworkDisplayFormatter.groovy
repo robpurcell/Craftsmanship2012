@@ -9,11 +9,10 @@ class ProNetworkDisplayFormatter {
 	
 	def format(programmerList) {
 		def formatter = setupFormatter()
-		def programmers = []
-		for (def programmer : programmerList) {
-			programmers << [Programmer:programmer.name, 
-				Skills:formatSkills(programmer.skills), 
-				Recommends:formatRecommendations(programmer.recommendations)]			
+		def programmers = programmerList.collect{
+			[Programmer:it.name,
+				Skills:formatSkills(it.skills),
+				Recommends:formatRecommendations(it.recommendations)]
 		}
 		def binding = ['rows': programmers]
 		def result = new SimpleTemplateEngine().createTemplate(formatter.template).make(binding).toString()
