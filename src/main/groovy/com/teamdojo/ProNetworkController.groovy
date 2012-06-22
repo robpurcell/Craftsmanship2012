@@ -1,5 +1,7 @@
 package com.teamdojo
 
+import com.teamdojo.formatter.ProNetworkDisplayFormatter;
+
 class ProNetworkController {
 	def displayNetwork(File xml) {
 		XmlProNetworkParser reader = new XmlProNetworkParser()

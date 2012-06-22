@@ -1,6 +1,8 @@
-package com.teamdojo
+package com.teamdojo.formatter
 
 import java.text.Format;
+
+
 import groovy.text.Template
 import groovy.text.SimpleTemplateEngine
 

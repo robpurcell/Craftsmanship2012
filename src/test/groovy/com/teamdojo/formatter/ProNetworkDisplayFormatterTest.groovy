@@ -1,7 +1,10 @@
-package com.teamdojo;
+package com.teamdojo.formatter;
 
 import static org.junit.Assert.*
 import org.junit.*
+
+import com.teamdojo.Programmer;
+import com.teamdojo.formatter.ProNetworkDisplayFormatter;
 
 class ProNetworkDisplayFormatterTest {
 	def programmer, programmer2
