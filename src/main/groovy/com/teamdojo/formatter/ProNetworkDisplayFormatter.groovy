@@ -6,7 +6,7 @@ import java.text.Format;
 import groovy.text.Template
 import groovy.text.SimpleTemplateEngine
 
-class ProNetworkDisplayFormatter extends AbstractFormatter {	
+class ProNetworkDisplayFormatter {	
 	
 	def format(programmerList) {
 		def formatter = setupFormatter()
@@ -37,5 +37,20 @@ class ProNetworkDisplayFormatter extends AbstractFormatter {
 	
 	def formatRecommendations(recommendations) {
 		formatListData(recommendations)
+	}
+	
+	def formatListData(dataAsList) {
+		StringBuilder builder = new StringBuilder()
+		def it = dataAsList.iterator()
+		if (it.hasNext()) {
+			builder.append(it.next())
+		}
+		while (it.hasNext()) {
+			builder
+			.append(", ")
+			.append(it.next())
+		}
+		
+		builder.toString()
 	}
 }

@@ -6,7 +6,7 @@ import java.text.Format;
 import groovy.text.Template
 import groovy.text.SimpleTemplateEngine
 
-class KudosFormatter extends AbstractFormatter {	
+class KudosFormatter {	
 	
 	def format(kudosList) {
 		def formatter = setupFormatter()
