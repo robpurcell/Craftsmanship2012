@@ -6,14 +6,12 @@ import java.text.Format;
 import groovy.text.Template
 import groovy.text.SimpleTemplateEngine
 
-class ProNetworkDisplayFormatter extends AbstractFormatter {	
+class KudosFormatter extends AbstractFormatter {	
 	
-	def format(programmerList) {
+	def format(kudosList) {
 		def formatter = setupFormatter()
-		def programmers = programmerList.collect{
-			[Programmer:it.name,
-				Skills:formatSkills(it.skills),
-				Recommends:formatRecommendations(it.recommendations)]
+		def programmers = kudosList.collect{
+			[Programmer:it.key, Kudos:it.value]
 		}
 		def binding = ['rows': programmers]
 		def result = new SimpleTemplateEngine().createTemplate(formatter.template).make(binding).toString()
@@ -25,17 +23,8 @@ class ProNetworkDisplayFormatter extends AbstractFormatter {
 		def formatter = new TableTemplateFormatter()
 		formatter
 				.addColumn("Programmer", 25)
-				.addColumn("Skills", 30)
-				.addColumn("Recommends", 40)
+				.addColumn("Kudos", 8)
 				.underlineColumnNames()
 		return formatter
-	}
-	
-	def formatSkills(skills) {
-		formatListData(skills)
-	}
-	
-	def formatRecommendations(recommendations) {
-		formatListData(recommendations)
 	}
 }

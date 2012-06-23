@@ -28,7 +28,6 @@ public class PageRankTest {
 //		|  /
 //		v L	
 //		C <-- D
-		
 		pageRank.addRecommendation("A", ["B","C"])
 		pageRank.addRecommendation("B", ["C"])
 		pageRank.addRecommendation("C", ["A"])
@@ -36,7 +35,6 @@ public class PageRankTest {
 		
 		assert pageRank.rank("A") == 1.49
 		assert pageRank.rank("B") == 0.78		
-//TODO: documentation expected 1.59: might be because EJML uses double instead of BigDecimal. Further investigation required.
 		assert pageRank.rank("C") == 1.58 
 		assert pageRank.rank("D") == 0.15
 
@@ -49,7 +47,6 @@ public class PageRankTest {
 //		|  /
 //		vL
 //		C
-		
 		pageRank.dampingFactor = 0.5
 		pageRank.addRecommendation("A", ["B","C"])
 		pageRank.addRecommendation("B", ["C"])
@@ -59,5 +56,4 @@ public class PageRankTest {
 		assert pageRank.rank("B") == 0.77
 		assert pageRank.rank("A") == 1.08 
 	}
-
 }

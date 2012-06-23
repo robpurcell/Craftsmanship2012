@@ -18,11 +18,19 @@ class AcceptanceTests {
 	@Test
 	//Acceptance Test One
 	public void theDisplayOfTheProgrammerNetwork() {
- 		def formattedOutput  = proNet.displayNetwork()
+ 		def formattedOutput  = proNet.getFormattedProNetwork()
 		assert formattedOutput != null
 		def lines = formattedOutput.readLines()
 		assert lines.size() == 14
-		
 		println formattedOutput 				
+	}
+	
+	@Test
+	//Acceptance Test Two
+	public void theDisplayOfTheProgrammerKudos() {
+		def formattedOutput  = proNet.getFormattedKudos()
+		def lines = formattedOutput.readLines()
+		assert lines.size() == 14
+		println formattedOutput
 	}
 }
