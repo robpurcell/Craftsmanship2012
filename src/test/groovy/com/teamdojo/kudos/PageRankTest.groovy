@@ -36,8 +36,8 @@ public class PageRankTest {
 		
 		assert pageRank.rank("A") == 1.49
 		assert pageRank.rank("B") == 0.78		
-//TODO: documentation expected 1.58: might be because EJML uses double instead of BigDecimal. Further investigation required.
-		assert pageRank.rank("C") == 1.59 
+//TODO: documentation expected 1.59: might be because EJML uses double instead of BigDecimal. Further investigation required.
+		assert pageRank.rank("C") == 1.58 
 		assert pageRank.rank("D") == 0.15
 
 	}
