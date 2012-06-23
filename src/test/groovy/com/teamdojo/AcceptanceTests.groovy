@@ -4,10 +4,8 @@ import static org.junit.Assert.*
 
 import org.junit.*
 
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default;
-
 class AcceptanceTests {
-	def proNet;
+	def proNet
 	
 	@Before
 	public void setUp() {
