@@ -11,14 +11,14 @@ class AcceptanceTests {
 	
 	@Before
 	public void setUp() {
-		proNet = new ProNetworkController()
+		File xml = new File("src/main/resources/ProNet.xml")
+		proNet = new ProNetworkController(xml)
 	}	
 
 	@Test
 	//Acceptance Test One
 	public void theDisplayOfTheProgrammerNetwork() {
-		File xml = new File("src/main/resources/ProNet.xml")
- 		def formattedOutput  = proNet.displayNetwork(xml)
+ 		def formattedOutput  = proNet.displayNetwork()
 		assert formattedOutput != null
 		def lines = formattedOutput.readLines()
 		assert lines.size() == 14

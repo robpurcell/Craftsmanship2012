@@ -6,8 +6,7 @@ import java.text.Format;
 import groovy.text.Template
 import groovy.text.SimpleTemplateEngine
 
-class ProNetworkDisplayFormatter {
-	
+class ProNetworkDisplayFormatter {	
 	
 	def format(programmerList) {
 		def formatter = setupFormatter()

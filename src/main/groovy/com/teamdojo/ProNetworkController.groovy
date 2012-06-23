@@ -3,11 +3,16 @@ package com.teamdojo
 import com.teamdojo.formatter.ProNetworkDisplayFormatter;
 
 class ProNetworkController {
-	def displayNetwork(File xml) {
+	def programmers = []
+	
+	def ProNetworkController(File xml) {
 		XmlProNetworkParser reader = new XmlProNetworkParser()
-		def programmers = reader.processInput(xml.text)
+		programmers = reader.processInput(xml.text)
+	}
+	
+	def displayNetwork() {
 		def ProNetworkDisplayFormatter formatter = new ProNetworkDisplayFormatter()
 		return formatter.format(programmers)
-	}	
+	}
 
 }
