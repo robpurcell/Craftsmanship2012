@@ -8,7 +8,7 @@ import org.ejml.simple.SimpleMatrix
  */
 class PageRank {
 
-	final def DAMPING_FACTOR = 0.85
+	def dampingFactor = 0.85
 	
 	def outboundMap = [:]
 	def inboundMap = [:]
@@ -25,7 +25,7 @@ class PageRank {
 
 		def arrayB = new double[params.size()][1]
 		for (int i = 0; i < params.size(); i++) {
-			arrayB[i][0] = 1 - DAMPING_FACTOR
+			arrayB[i][0] = 1 - dampingFactor
 		}
 
 		def b = new SimpleMatrix(arrayB)
@@ -68,7 +68,7 @@ class PageRank {
 			List<String> inboundNodes = getInboundNodes(sourceNode)
 			for (String inboundNode: inboundNodes) {
 				if (inboundNode.equals(linkNode)) {
-					return -1 * (DAMPING_FACTOR / getOutboundNodes(linkNode).size())
+					return -1 * (dampingFactor / getOutboundNodes(linkNode).size())
 				}
 			}
 		}

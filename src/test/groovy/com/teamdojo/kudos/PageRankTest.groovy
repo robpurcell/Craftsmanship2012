@@ -17,8 +17,8 @@ public class PageRankTest {
 		pageRank.addRecommendation("B", ["A"])
 		pageRank.addRecommendation("A", ["B"])
 		
-		assert pageRank.rank("A") == 1d
-		assert pageRank.rank("B") == 1d
+		assert pageRank.rank("A") == 1
+		assert pageRank.rank("B") == 1
 	}
 	
 	@Test
@@ -26,7 +26,7 @@ public class PageRankTest {
 //		A --> B
 //		^   /
 //		|  /
-//		V L	
+//		v L	
 //		C <-- D
 		
 		pageRank.addRecommendation("A", ["B","C"])
@@ -40,6 +40,24 @@ public class PageRankTest {
 		assert pageRank.rank("C") == 1.58 
 		assert pageRank.rank("D") == 0.15
 
+	}
+	
+	@Test
+	public void networkAccuracy() {
+//		A --> B
+//		^   /
+//		|  /
+//		vL
+//		C
+		
+		pageRank.dampingFactor = 0.5
+		pageRank.addRecommendation("A", ["B","C"])
+		pageRank.addRecommendation("B", ["C"])
+		pageRank.addRecommendation("C", ["A"])
+		
+		assert pageRank.rank("C") == 1.15
+		assert pageRank.rank("B") == 0.77
+		assert pageRank.rank("A") == 1.08 
 	}
 
 }

@@ -3,12 +3,9 @@ package com.teamdojo.kudos
 import com.teamdojo.XmlProNetworkParser
 
 class ProgrammerKudos {
-	def getKudos(def xml) {
-		XmlProNetworkParser reader = new XmlProNetworkParser()
-		def programmers = reader.processInput(xml.text)
+	def getKudos(def programmers) {
 		PageRank pageRank = new PageRank()
 		
-		def rank = 1
 		for (def programmer: programmers) {
 			pageRank.addRecommendation(programmer.name, programmer.recommendations)
 		}
