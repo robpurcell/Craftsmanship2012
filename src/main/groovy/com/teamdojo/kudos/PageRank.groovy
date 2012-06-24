@@ -1,6 +1,7 @@
 package com.teamdojo.kudos
 
 import org.ejml.simple.SimpleMatrix
+import com.teamdojo.Helper
 
 /*
  * Based on code by Nima Goodarzi
@@ -18,7 +19,7 @@ class PageRank {
 	 * the parameter constants. x is the page ranks matrix. b is a n*1 matrix
 	 * which all the values are equal to the damping factor.
 	 */
-	def rank(String node) {
+	def rank(node) {
 		def params = []
 		generateParamList(node, params)
 		def a = new SimpleMatrix(generateMatrix(params))
@@ -33,7 +34,7 @@ class PageRank {
 		def x = a.solve(b)
 
 		def ind, cnt = 0
-		for (String currentNode : params) {
+		for (def currentNode : params) {
 			if (currentNode.equals(node))
 				ind = cnt
 			cnt++
@@ -65,8 +66,8 @@ class PageRank {
 			return 1
 		}
 		else {
-			List<String> inboundNodes = getInboundNodes(sourceNode)
-			for (String inboundNode: inboundNodes) {
+			def inboundNodes = getInboundNodes(sourceNode)
+			for (def inboundNode: inboundNodes) {
 				if (inboundNode.equals(linkNode)) {
 					return -1 * (dampingFactor / getOutboundNodes(linkNode).size())
 				}
@@ -88,25 +89,18 @@ class PageRank {
 		def inboundNodes = getInboundNodes(startingNode)
 
 		// Recursive generate a list for each inboundNode found
-		for (String inboundNode : inboundNodes) {
+		for (def inboundNode : inboundNodes) {
 			if (!params.contains(inboundNode))
 				generateParamList(inboundNode, params)
 		}
 	}
 
 	def getInboundNodes(node) {
-		ensureNullSafeList(inboundMap.get(node))
+		Helper.ensureNullSafeList(inboundMap.get(node))
 	}
 
 	def getOutboundNodes(node) {
-		ensureNullSafeList(outboundMap.get(node))
-	}
-	
-	def ensureNullSafeList(nodes) {
-		if (nodes == null) {
-			nodes = []
-		}
-		return nodes
+		Helper.ensureNullSafeList(outboundMap.get(node))
 	}
 	
 	def addRecommendation(node, recommends) {

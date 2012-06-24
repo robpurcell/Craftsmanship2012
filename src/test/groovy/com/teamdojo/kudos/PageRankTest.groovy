@@ -10,6 +10,12 @@ public class PageRankTest {
 	public void setUp() {
 		pageRank = new PageRank();
 	}
+	
+	@Test
+	public void thatANetworkWithOnlyOneNodeHasARankOfMinusTheDampingFactor() {
+		pageRank.addRecommendation("A", [])		
+		assert pageRank.rank("A") == 1 - pageRank.dampingFactor
+	}
 
 	@Test
 	public void thatANetworkWithTwoNodesLinkedToEachOtherBothHaveARankOfOne() {

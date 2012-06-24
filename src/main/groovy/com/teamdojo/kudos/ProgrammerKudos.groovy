@@ -4,7 +4,7 @@ import com.teamdojo.XmlProNetworkParser
 
 class ProgrammerKudos {
 	def getKudos(def programmers) {
-		PageRank pageRank = new PageRank()
+		def pageRank = new PageRank()
 		
 		for (def programmer: programmers) {
 			pageRank.addRecommendation(programmer.name, programmer.recommendations)
